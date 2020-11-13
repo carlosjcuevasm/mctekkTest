@@ -68,12 +68,28 @@ button.get-started{
 #intro .hero {
     padding-top:100px;
     padding-bottom: 100px;
+
+    background-color:black;
+
+    
 }
 
 #intro .hero .contain{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap:0 var(--offset);
+    gap:0 0;
+
+    width: fit-content;
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+
+    color: var(--color1);    
+}
+
+
+#intro .hero .contain .showcase img.product{
+    width: 90%;
 }
 
 #intro .hero .contain .description .title{
@@ -88,8 +104,36 @@ button.get-started{
     width:250px;
 }
 
+
+#intro .hero .contain .description .title .logo-by span{
+    font-size: 20px;
+}
 #intro .hero .contain .description .title img.logo-by{
     width: 70px;
-    align-self: flex-start;
+    vertical-align: baseline;
 }
 
+#intro .hero .contain .description .description{
+    padding-top: 50px;
+}
+
+#intro .hero .contain .description .description h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+#intro .hero .contain .description .description p{
+    letter-spacing: 1px;
+}
+#intro .hero .contain .description .brand{
+    text-transform: uppercase;
+}
+
+#intro .hero .contain .call-to-action {
+    padding-top: 50px;
+}
+
+#intro .hero .contain .call-to-action .get-started{
+    background-color: var(--color2);
+    border-style: none;
+    padding: 10px 50px;
+}
