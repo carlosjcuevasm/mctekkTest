@@ -69,10 +69,18 @@ button.get-started{
     padding-top:100px;
     padding-bottom: 100px;
 
-    background-color:black;
+    
+    background:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.95)), url('../img/bg/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 
     
+    /*
+    assets/img/bg/Group 9.jpg
+    */
 }
+
 
 #intro .hero .contain{
     display: grid;
