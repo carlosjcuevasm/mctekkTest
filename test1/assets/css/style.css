@@ -39,12 +39,12 @@
 
 #header .navbar{
     background-color: var(--color2); 
-    padding-top:15px ;
-    padding-bottom: 15px;
+    padding-top:10px ;
+    padding-bottom: 10px;
 }
 
 #header .navbar .navbar-brand img{
-    width: 50%;
+    width: 70%;
 }
 
 #header .navbar a{
@@ -53,7 +53,7 @@
     color: var(--color1);
 }
     
-#header .navbar .get-started{
+button.get-started{
     background-color: transparent;
     border-style: solid;
     border-color: var(--color1);
@@ -63,6 +63,33 @@
 
     text-transform: uppercase;
     color: white;
+}
 
+#intro .hero {
+    padding-top:100px;
+    padding-bottom: 100px;
+}
+
+#intro .hero .contain{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:0 var(--offset);
+}
+
+#intro .hero .contain .description .title{
+    width: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#intro .hero .contain .description .title img.logo-name{
+    width:250px;
+}
+
+#intro .hero .contain .description .title img.logo-by{
+    width: 70px;
+    align-self: flex-start;
 }
 
