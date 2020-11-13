@@ -1,0 +1,68 @@
+:root {
+    --color1:white;
+    --color2:rgb(26, 150, 150);
+
+    --offset:50px;
+  }
+
+.contain {
+    padding-left: var(--offset);
+    padding-right: var(--offset);
+}
+
+#header .login {
+    padding: 20px 0 10px 0;
+}
+
+#header .login .contain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;   
+}
+
+#header .login .brand img{
+    width: 50%;
+}
+
+#header .login .links a{
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    padding-left: 10px;
+
+    color: var(--color2);
+    font-weight: 500;
+
+}
+
+#header .navbar{
+    background-color: var(--color2); 
+    padding-top:15px ;
+    padding-bottom: 15px;
+}
+
+#header .navbar .navbar-brand img{
+    width: 50%;
+}
+
+#header .navbar a{
+    text-transform: uppercase;
+
+    color: var(--color1);
+}
+    
+#header .navbar .get-started{
+    background-color: transparent;
+    border-style: solid;
+    border-color: var(--color1);
+    border-radius: 2px;
+
+    padding: 5px 40px;
+
+    text-transform: uppercase;
+    color: white;
+
+}
+
