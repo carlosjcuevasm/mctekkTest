@@ -2,7 +2,11 @@
     --color1:white;
     --color2:rgb(26, 150, 150);
     --color-3:black;
-
+    --color-4:rgb(17, 17, 17);
+    --color-5:rgb(143, 40, 143);
+    --color-6:rgb(226, 226, 226);
+    --color-7:rgb(2, 102, 168);
+    --color-8:rgb(3, 146, 151);
     --offset:50px;
     --offset-2:100px
   }
@@ -328,8 +332,6 @@ button.get-started{
     text-transform: uppercase;
     letter-spacing: .16vw;
     font-size:calc(12px + 1.6vw);
-
-    
 }
 
 #deals .refurbished .call-to-action button{
@@ -344,6 +346,75 @@ button.get-started{
     
 }
 
+#testimonials .press .contain {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:0 1.6vw;
+
+    background-color: var(--color-3);
+
+    text-align: center;
+    color: var(--color-6);
+
+    padding:5vw var(--offset);
+}
+
+#testimonials .press .contain .card-item .description{
+    padding-top: 2vw;
+
+}
+
+#testimonials .press .contain .card-item .description p{
+    font-size: calc(10px + .3vw);
+}
+
+footer .sitemap .contain {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+
+    background-color: var(--color-4);
+
+    padding: 4vw;
+}
+
+footer .sitemap .contain .column-many{
+    display: flex;
+    flex-direction: column;
+}
+
+footer .sitemap .contain .column h6{
+    text-transform: uppercase;
+
+    color: var(--color1);
+}
+
+
+
+footer .sitemap .contain .column ul{
+    padding-left: 0;
+}
+
+footer .sitemap .contain .column ul li{
+    list-style-type: none;
+    
+}
+
+footer .sitemap .contain .column ul li a{
+    text-decoration: none;
+
+    color: var(--color-5);
+}
+footer .sitemap .contain .column.c-monitoring ul li a{
+    text-decoration: none;
+
+    color: var(--color-7);
+}
+
+footer .sitemap .contain .column.c-info ul li a{
+    text-decoration: none;
+
+    color: var(--color-8);
+}
 
 @media (max-width: 1366px){
     
