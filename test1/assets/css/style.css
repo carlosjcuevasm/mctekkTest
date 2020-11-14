@@ -209,6 +209,50 @@ button.get-started{
 
 
 
+#product-examples .featured-examples {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 0 0;
+
+    text-align: center;
+}
+
+#product-examples .featured-examples  .item-1 {
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/bg/ninjabg.jpg");
+    background-size: cover;
+
+}
+
+#product-examples .featured-examples  .item-2 {
+    background:url("../img/bg/Group\ 9.jpg");
+    background-size: cover;
+
+}
+
+#product-examples .featured-examples .card-item .title h1{
+    margin: 0;
+    padding-top: 2vw;
+
+    text-transform: uppercase;
+    letter-spacing: .1vw;
+    font-size: calc(20px + 1vw);
+
+    color: var(--color1)
+}
+
+#product-examples .featured-examples  .card-item .call-to-action a{
+    text-transform: uppercase;
+
+    color: var(--color1);
+}
+
+
+
+#product-examples .featured-examples  .card-item .brand img{
+    padding: 2vw 0 6vw 0;
+
+    width: 24vw;
+}
 
 
 @media (max-width: 1366px){
