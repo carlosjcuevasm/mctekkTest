@@ -1,6 +1,7 @@
 :root {
     --color1:white;
     --color2:rgb(26, 150, 150);
+    --color-3:black;
 
     --offset:50px;
     --offset-2:100px
@@ -311,11 +312,37 @@ button.get-started{
 #intro-2 .hero .showcase .product img{
     width:38vw;
     min-width: 500px;
-    
-    
+}
+
+#deals .refurbished{
+    background-color: var(--color2);
+    color: var(--color1);
+}
+
+#deals .refurbished .call-to-action{
+  text-align: center;  
+  padding: 2.2vw;
+}
+
+#deals .refurbished .call-to-action h1{
+    text-transform: uppercase;
+    letter-spacing: .16vw;
+    font-size:calc(12px + 1.6vw);
+
     
 }
 
+#deals .refurbished .call-to-action button{
+    color: var(--color-3);
+
+    background-color: var(--color1);
+
+    font-size: calc(10px + .4vw);
+    padding: .6vw 4vw;
+
+    margin-top: 1.4vw;
+    
+}
 
 
 @media (max-width: 1366px){
