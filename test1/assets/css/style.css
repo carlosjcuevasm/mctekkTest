@@ -203,7 +203,7 @@ button.get-started{
     flex-direction: column;
 }
 #specs .featured-specs .card-item .icon img{
-    width:calc(80px + 1vw);
+    height:calc(50px + 1vw);
 }
 #specs .featured-specs .card-item .title h1{
     text-transform: uppercase;
@@ -212,7 +212,7 @@ button.get-started{
     padding-top: 1vw;
 }
 #specs .featured-specs .card-item .description p{
-    font-size: calc(10px + 1vw);
+    font-size: calc(8px + .4vw);
     font-weight: 600;
 
     padding-top: 1vw;
