@@ -42,7 +42,6 @@ class Users extends Component {
     return (
         <div>
           <p>{this.state.users}</p>
-        {/* <button onClick={this.getAllUsers}>Hey</button> */}
         </div>
         
     );

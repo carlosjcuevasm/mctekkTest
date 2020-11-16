@@ -10,6 +10,7 @@ export  async function  loginUser(mail,pass) {
                 email: mail,
                 password: pass})
             this.setState({token: res.data.token})
+            localStorage.setItem("token", res.data.token);
             // console.log(this.state.token)
             this.setState(({redirect:true}))
             return res.data.token
@@ -56,6 +57,7 @@ export function  onSubmitHandler (event)
         event.preventDefault();
         this.loginUser(mail, pass)
         
+        
     }
 export function onSubmitRegister(event){
     let name = this.state.name
@@ -70,11 +72,13 @@ export function onSubmitRegister(event){
 }
     
 export async function  getAllUsers() {
+        
         try{
+            
             let res = await api.get('/users',{
                 
                 headers:{
-                    'Authorization': this.state.token
+                    'Authorization': localStorage.getItem('token')
                 }
             }
             )
@@ -99,6 +103,7 @@ export async function createUser (first,last,mail,pass,vpass,company){
             default_company: company}
             )            
         this.setState({token:res.data.session.token})
+        localStorage.setItem("token", this.state.token);
         this.setState({redirect:true})
         return res.data.session.token
         
