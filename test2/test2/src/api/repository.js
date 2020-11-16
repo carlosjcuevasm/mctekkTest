@@ -47,14 +47,17 @@ export async function  getAllUsers() {
         try{
             let res = await api.get('/users',{
                 
-            headers:{
-                'Authorization': this.state.token
-            }
+                headers:{
+                    'Authorization': this.state.token
+                }
             }
             )
-            console.log(res)
+            this.setState({users: res.data[0].email})
+            return res
         }
         catch(err){
             console.log(err)
+            alert("Inicia Sesion")
+            this.setState({redirect: true})
         }
     }

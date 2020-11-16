@@ -1,35 +1,48 @@
 // Contact.js
 
 import React, { Component } from 'react';
+import {getAllUsers} from '../api/repository'
+
+import {Redirect} from 'react-router-dom'
 
 
 class Users extends Component {
 
   state={
-    token: ""
+    token: "",
+    users:[],
+    redirect: false
   }
 
   constructor(props){
     super(props) 
+
+    
+
     try{ 
     let to = this.props.location.state.token;
-    console.log(to)
+    
     this.state = {
-      token: to
-    }}
-    catch(err){
-    }
+      token: to,
+      users: []
+    }}catch(err){}
+
+    this.getAllUsers = getAllUsers.bind(this)
+    this.getAllUsers();
+
   }
 
-
+  
 
   render() {
-    
+    if(this.state.redirect){
+      return <Redirect to={{pathname:'/', state:{token:this.state.token}}}/>
+    }
+
     return (
         <div>
-          <h2>Contact</h2>
-          <p>{this.state.token}</p>
-          <h1>hola</h1>
+          <p>{this.state.users}</p>
+        {/* <button onClick={this.getAllUsers}>Hey</button> */}
         </div>
         
     );

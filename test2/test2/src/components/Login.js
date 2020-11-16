@@ -29,7 +29,7 @@ constructor(props){
 
 
   render() {
-    if (this.state.redirect==true){
+    if (this.state.redirect){
       return <Redirect to={{pathname:'/contact', state:{token:this.state.token}}}/>
     }
     return (
