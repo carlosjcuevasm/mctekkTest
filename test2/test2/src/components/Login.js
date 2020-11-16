@@ -1,6 +1,4 @@
-// Home.js
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import {loginUser,myChangeHandler,onSubmitHandler} from '../api/repository'
 import {Redirect} from 'react-router-dom'
 
@@ -30,14 +28,14 @@ constructor(props){
 
   render() {
     if (this.state.redirect){
-      return <Redirect to={{pathname:'/contact', state:{token:this.state.token}}}/>
+      return <Redirect to={{pathname:'/users', state:{token:this.state.token}}}/>
     }
     return (
         <div>
           <h2>Bienvenido, inicia sesion</h2>
           <form onSubmit={this.onSubmitHandler}>
             <label>
-                Name:
+                email:
                 <input type="email" name="email" onChange={this.myChangeHandler}/>
             </label>
             <label>
