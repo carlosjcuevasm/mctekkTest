@@ -6,20 +6,8 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Users from './components/Users';
 
-import axios from 'axios'
-
-const api = axios.create({
-    baseURL: 'https://apidev.kanvas.dev/v1/'
-})
 
 class App extends Component {
-
-    state = {
-        comments: [],
-        token : "",
-        email:"",
-        password:""
-    }
 
     // constructor(){
     //     super();
