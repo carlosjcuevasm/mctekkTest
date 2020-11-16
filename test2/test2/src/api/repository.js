@@ -82,8 +82,9 @@ export async function  getAllUsers() {
                 }
             }
             )
-            this.setState({users: res.data[0].email})
-            return res
+            let usr = res.data.map((users)=> users.email)
+            this.setState({users: usr})
+            return res.data
         }
         catch(err){
             console.log(err)
