@@ -16,7 +16,9 @@ class App extends Component {
 
     state = {
         comments: [],
-        token : ""
+        token : "",
+        email:"",
+        password:""
     }
 
     constructor(){
@@ -34,9 +36,10 @@ class App extends Component {
       }
     }
     
-   
+   //Usada de prueba. Obligado necesita parametros
     loginUser = async() =>{
         try{
+            alert(document.getElementById("mail"))
             let res = await api.post('/auth',{
                 email: "mauricio@email.com",
                 password:"mauricio123"
@@ -52,21 +55,17 @@ class App extends Component {
             console.log(err)
         }
     }
-    loginUser = async(email,password) =>{
+    loginUser = async(mail,pass) =>{
         try{
             let res = await api.post('/auth',{
-                email: "mauricio@email.com",
-                password:"mauricio123"
+                email: mail,
+                password: pass
             },
             )
-            console.log(res)
-            console.log(res.data.token)
             this.setState({token: res.data.token})
-            console.log(this.state.token)
-
-            
         } catch (err){
             console.log(err)
+            console.log ("Error en el inicio de sesion")
         }
     }
 
@@ -85,7 +84,7 @@ class App extends Component {
         }
     }
 
-    createUser = async () =>{
+    createUser = async (first,last,mail,pass,veripass,company) =>{
         try{
             let res = await api.post('/users',{
                 firstname: "Mauricio",
@@ -94,13 +93,38 @@ class App extends Component {
                 password: "mauricio123",
                 verify_password: "mauricio123",
                 default_company: "Bodega srl"}
-                )
-            
+                )            
             console.log(res)
+            this.loginUser(mail,pass)
         } catch (err){
             console.log(err)
+            console.log("Error en creacion de usuario")
         }
     }
+
+    myChangeHandler = (event) => {
+        switch(event.target.name){
+            case "email":
+                this.setState({email: event.target.value}); 
+                break;
+            case "password":
+                this.setState({password: event.target.value}); 
+                break;
+            default:
+
+        }
+    }
+    onSubmitHandler = (event) =>
+    {   
+        let mail = this.state.email
+        let pass = this.state.password
+        event.preventDefault();
+        alert(this.state.email + '\n'+ this.state.password)
+        this.loginUser(mail, pass)
+    }
+
+        
+      
 
   render() {
     return (
@@ -124,7 +148,20 @@ class App extends Component {
           <button onClick={this.createUser}>Crear usuario</button>
           <button onClick={this.loginUser}>Iniciar Sesion</button>
           <button onClick={this.getAllUsers}>Listar Usuarios</button>
-        </div>
+          <form onSubmit={this.onSubmitHandler}>
+            <label>
+                Name:
+                <input type="email" name="email" onChange={this.myChangeHandler}/>
+            </label>
+            <label>
+                Pass:
+                <input type="password" name="password" onChange={this.myChangeHandler}/>
+            </label>
+            <input type="submit" value="Iniciar sesion"/>
+            </form>
+            <h1>Hola, tu correo es {this.state.email}</h1>
+            <h1>Hola, tu pass es {this.state.password}</h1>
+            </div>
       </Router>
     );
   }
