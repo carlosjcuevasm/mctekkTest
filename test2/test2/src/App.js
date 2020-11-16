@@ -15,11 +15,13 @@ const api = axios.create({
 class App extends Component {
 
     state = {
-        comments: []
+        comments: [],
+        token : ""
     }
 
     constructor(){
         super();
+        
         
     }
 
@@ -32,17 +34,68 @@ class App extends Component {
       }
     }
     
+   
+    loginUser = async() =>{
+        try{
+            let res = await api.post('/auth',{
+                email: "mauricio@email.com",
+                password:"mauricio123"
+            },
+            )
+            console.log(res)
+            console.log(res.data.token)
+            this.setState({token: res.data.token})
+            console.log(this.state.token)
 
-    postComment = async () =>{
+            
+        } catch (err){
+            console.log(err)
+        }
+    }
+    loginUser = async(email,password) =>{
+        try{
+            let res = await api.post('/auth',{
+                email: "mauricio@email.com",
+                password:"mauricio123"
+            },
+            )
+            console.log(res)
+            console.log(res.data.token)
+            this.setState({token: res.data.token})
+            console.log(this.state.token)
+
+            
+        } catch (err){
+            console.log(err)
+        }
+    }
+
+    getAllUsers = async() =>{
+        try{
+            let res = await api.get('/users',{
+                
+            headers:{
+                'Authorization': this.state.token
+            }
+            }
+            )
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+
+    createUser = async () =>{
         try{
             let res = await api.post('/users',{
-                firstname: "Nombre",
-                lastname: "Apellido",
-                email: "pruepruepp@email.com",
-                password: "ejemploejemplo",
-                verify_password: "ejemploejemplo",
-                default_company: "Empresa Ejemplo"}
+                firstname: "Mauricio",
+                lastname: "Perez",
+                email: "mauricio@email.com",
+                password: "mauricio123",
+                verify_password: "mauricio123",
+                default_company: "Bodega srl"}
                 )
+            
             console.log(res)
         } catch (err){
             console.log(err)
@@ -68,7 +121,9 @@ class App extends Component {
               <Route path='/about' component={About} />
           </Switch>
           {this.state.comments.map(comments => <h1 key ={comments.id}>{comments.body}</h1>)}
-          <button onClick={this.postComment}>Crear usuario</button>
+          <button onClick={this.createUser}>Crear usuario</button>
+          <button onClick={this.loginUser}>Iniciar Sesion</button>
+          <button onClick={this.getAllUsers}>Listar Usuarios</button>
         </div>
       </Router>
     );
