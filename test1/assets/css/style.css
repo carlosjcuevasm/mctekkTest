@@ -7,6 +7,8 @@
     --color-6:rgb(226, 226, 226);
     --color-7:rgb(2, 102, 168);
     --color-8:rgb(3, 146, 151);
+    --color-9:rgb(97, 96, 96);
+    --color-10:rgb(48, 47, 47);
     --offset:50px;
     --offset-2:5vw;
 
@@ -351,6 +353,7 @@ button.get-started{
 }
 
 /* FOOTER SECTION */
+/*sitemap section*/
 footer .sitemap .contain {
     display: grid;
     grid-template-columns: repeat(6,1fr);
@@ -389,6 +392,43 @@ footer .sitemap .contain .column.c-info ul li a{
 
     color: var(--color-8);
 }
+
+
+/* stay in touch section */
+footer .stay-in-touch {
+    text-align: center;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+
+    background-color: black;
+}
+footer .stay-in-touch span{
+    color: var(--color1)
+}
+footer .stay-in-touch h1{
+    text-transform: uppercase;
+    letter-spacing: .1vw;
+
+    color: var(--color-9);
+}
+
+footer .stay-in-touch input{
+    background-color: var(--color-10);
+
+    border-radius: 6px;
+    border-style: none;
+    padding:.4vw 15vw;
+
+    text-transform: capitalize;
+    
+    text-align: center;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: calc(10px + .6vw);
+
+    color: var(--color-9);
+}
+
 
 
 /* RESPONSIVE VIEWS */
