@@ -50,15 +50,15 @@ export  async function  loginUser(mail,pass) {
 
         }
     }
+    //Handler for login form submit
 export function  onSubmitHandler (event) 
     {   
         let mail = this.state.email
         let pass = this.state.password
         event.preventDefault();
-        this.loginUser(mail, pass)
-        
-        
+        this.loginUser(mail, pass)   
     }
+    //handler for users get form submit
 export function onSubmitRegister(event){
     let name = this.state.name
     let lname = this.state.lname

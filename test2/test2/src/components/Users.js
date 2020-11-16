@@ -17,11 +17,10 @@ class Users extends Component {
   constructor(props){
     super(props) 
 
-    
-
+    //Updated, using local storage.
+    //This try chatch could be removed, but stable so wont. Finished for now.
     try{ 
     let to = this.props.location.state.token;
-    
     this.state = {
       token: to,
       users: []
