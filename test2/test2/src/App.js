@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Login from './components/Login';
 import About from './components/About';
-import Contact from './components/Contact';
+import Users from './components/Users';
 
 import axios from 'axios'
 
@@ -50,22 +50,6 @@ class App extends Component {
         }
     }
 
-    getAllUsers = async() =>{
-        try{
-            let res = await api.get('/users',{
-                
-            headers:{
-                'Authorization': this.state.token
-            }
-            }
-            )
-            console.log(res)
-        }
-        catch(err){
-            console.log(err)
-        }
-    }
-
     createUser = async (first,last,mail,pass,veripass,company) =>{
         try{
             let res = await api.post('/users',{
@@ -84,29 +68,6 @@ class App extends Component {
         }
     }
 
-    // myChangeHandler = (event) => {
-    //     switch(event.target.name){
-    //         case "email":
-    //             this.setState({email: event.target.value}); 
-    //             break;
-    //         case "password":
-    //             this.setState({password: event.target.value}); 
-    //             break;
-    //         default:
-
-    //     }
-    // }
-    // onSubmitHandler = (event) =>
-    // {   
-    //     let mail = this.state.email
-    //     let pass = this.state.password
-    //     event.preventDefault();
-    //     this.loginUser(mail, pass)
-    // }
-
-        
-      
-
   render() {
     return (
     <Router>
@@ -122,22 +83,9 @@ class App extends Component {
           <hr />
           <Switch>
               <Route exact path='/' component={Login} />
-              <Route path='/contact' component={Contact} />
+              <Route path='/contact' component={Users} />
               <Route path='/about' component={About} />
           </Switch>
-          {/* <form onSubmit={this.onSubmitHandler}>
-            <label>
-                Name:
-                <input type="email" name="email" onChange={this.myChangeHandler}/>
-            </label>
-            <label>
-                Pass:
-                <input type="password" name="password" onChange={this.myChangeHandler}/>
-            </label>
-            <input type="submit" value="Iniciar sesion"/>
-            </form> */}
-            <h1>Hola, tu correo es {this.state.email}</h1>
-            <h1>Hola, tu pass es {this.state.password}</h1>
             </div>
       </Router>
     );

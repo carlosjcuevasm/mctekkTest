@@ -9,13 +9,15 @@ export  async function  loginUser(mail,pass) {
         try{
             let res = await api.post('/auth',{
                 email: mail,
-                password: pass
-            },
-            )
+                password: pass})
             this.setState({token: res.data.token})
+            // console.log(this.state.token)
+            this.setState(({redirect:true}))
+            return true
         } catch (err){
             console.log(err)
-            console.log ("Error en el inicio de sesion")
+            alert("Error en el inicio de sesion")
+            return false
         }
     }
 
@@ -38,5 +40,21 @@ export function  onSubmitHandler (event)
         let pass = this.state.password
         event.preventDefault();
         this.loginUser(mail, pass)
+        
     }
     
+export async function  getAllUsers() {
+        try{
+            let res = await api.get('/users',{
+                
+            headers:{
+                'Authorization': this.state.token
+            }
+            }
+            )
+            console.log(res)
+        }
+        catch(err){
+            console.log(err)
+        }
+    }

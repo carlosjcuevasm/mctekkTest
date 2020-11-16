@@ -1,6 +1,10 @@
 // Home.js
 import React, { Component } from 'react';
+import { render } from 'react-dom';
 import {loginUser,myChangeHandler,onSubmitHandler} from '../api/repository'
+import {Redirect} from 'react-router-dom'
+
+
 
 class Login extends Component {
 
@@ -8,7 +12,8 @@ class Login extends Component {
     comments: [],
     token : "",
     email:"",
-    password:""
+    password:"",
+    redirect:false
 }
 
 
@@ -24,6 +29,9 @@ constructor(props){
 
 
   render() {
+    if (this.state.redirect==true){
+      return <Redirect to={{pathname:'/contact', state:{token:this.state.token}}}/>
+    }
     return (
         <div>
           <h2>Bienvenido, inicia sesion</h2>
@@ -37,11 +45,7 @@ constructor(props){
                 <input type="password" name="password" onChange={this.myChangeHandler}/>
             </label>
             <input type="submit" value="Iniciar sesion"/>
-            </form>
-            <h1>Hola, tu correo es {this.state.email}</h1>
-            <h1>Hola, tu pass es {this.state.password}</h1>
-            <button onClick={onSubmitHandler}>HOLA</button>
-            
+            </form> 
         </div>
         
     );
