@@ -9,9 +9,6 @@ import Users from './components/Users';
 
 class App extends Component {
 
-    // constructor(){
-    //     super();
-    // }
 
   render() {
     return (
