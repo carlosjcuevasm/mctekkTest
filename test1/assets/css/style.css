@@ -1,6 +1,6 @@
 :root {
     --color1:white;
-    --color2:rgb(26, 150, 150);
+    --color2:#1ab1b1;
     --color-3:black;
     --color-4:rgb(17, 17, 17);
     --color-5:rgb(143, 40, 143);
@@ -9,6 +9,7 @@
     --color-8:rgb(3, 146, 151);
     --color-9:rgb(97, 96, 96);
     --color-10:rgb(48, 47, 47);
+    --color11:#a3b43f ;
     --offset:50px;
     --offset-2:5vw;
 
@@ -34,9 +35,11 @@ button.get-started{
     background-color: transparent;
     border-style: solid;
     border-color: var(--color1);
-    border-radius: 2px;
+    border-radius: 5px;
 
-    padding: 5px 40px;
+    padding: .5vw 3vw;
+
+    font-weight: 600;
 
     text-transform: uppercase;
     color: white;
@@ -45,7 +48,8 @@ button.get-started{
 /* HEADER, BARRA NAVEGACION */
 
 #header .login {
-    padding: 20px 0 10px 0;
+    padding-top:2vw;
+    padding-bottom: 1vw;
 }
 
 #header .login .contain {
@@ -58,7 +62,7 @@ button.get-started{
 }
 
 #header .login .brand img{
-    width: 50%;
+    width: calc(50px + 1.4vw);
 }
 
 #header .login .links a{
@@ -66,25 +70,41 @@ button.get-started{
     text-transform: uppercase;
     text-decoration: none;
 
-    padding-left: 10px;
+    padding-left: 1vw;
 
     color: var(--color2);
-    font-weight: 500;
+
+    font-size: calc(12px + .1vw);
+    font-weight: 600;
 
 }
 
 #header .navbar{
+    display:flex;
+    flex-direction: row;
+    align-items: baseline;
+    
+
+
     background-color: var(--color2); 
-    padding-top:10px ;
-    padding-bottom: 10px;
+
+    padding-top:1vw ;
+    padding-bottom: 1vw;
 }
 
 #header .navbar .navbar-brand img{
-    width: 70%;
+    width: calc(80px + .1vw);
 }
 
 #header .navbar a{
     text-transform: uppercase;
+
+    font-weight: 600;
+
+    font-size: calc(12px + .4vw);
+
+    padding-left: 1w;
+    padding-right: 2vw;
 
     color: var(--color1);
 }
@@ -135,8 +155,7 @@ button.get-started{
 }
 
 #intro .hero .contain .description .title img.logo-name{
-    width: 18vw;
-    min-width: 200px;
+    width: calc(100px + 12vw)
 }
 
 
@@ -153,12 +172,15 @@ button.get-started{
     letter-spacing: 2px;
     white-space: nowrap;
 
+    font-weight: normal;
+
     font-size: calc(12px + 2.2vw);
 
     margin: 0;
 }
 #intro .hero .contain .description .description p{
     letter-spacing: 1px;
+    font-size: calc(10px + .5vw);
 }
 #intro .hero .contain .description .description .brand{
     text-transform: uppercase;
@@ -171,7 +193,7 @@ button.get-started{
 #intro .hero .contain .call-to-action .get-started{
     background-color: var(--color2);
     border-style: none;
-    padding: 10px 50px;
+    padding: 1vw 5vw
 }
 
 
@@ -392,15 +414,13 @@ footer .sitemap .contain .column.c-info ul li a{
 
     color: var(--color-8);
 }
-
-
 /* stay in touch section */
 footer .stay-in-touch {
     text-align: center;
-    padding-top: 2vw;
-    padding-bottom: 2vw;
+    padding-top: calc(10px + 2vw);
+    padding-bottom: calc(10px + 2vw);
 
-    background-color: black;
+    background-color: var(--color-3);
 }
 footer .stay-in-touch span{
     color: var(--color1)
@@ -408,6 +428,8 @@ footer .stay-in-touch span{
 footer .stay-in-touch h1{
     text-transform: uppercase;
     letter-spacing: .1vw;
+
+    font-size: calc(12px + 1.6vw);
 
     color: var(--color-9);
 }
@@ -419,6 +441,8 @@ footer .stay-in-touch input{
     border-style: none;
     padding:.4vw 15vw;
 
+    margin-top: .5vw;
+
     text-transform: capitalize;
     
     text-align: center;
@@ -427,6 +451,93 @@ footer .stay-in-touch input{
     font-size: calc(10px + .6vw);
 
     color: var(--color-9);
+}
+/* foot section */
+/* foot brand section */
+footer .foot .contain{
+    background-color: var(--color-3);
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:0 0;
+
+    padding-top: calc(5px + 4vw);
+    padding-bottom: calc(5px + .5vw);;
+
+    --fonti:  calc(6px + .6vw);
+}
+
+footer .foot .contain .brand{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+footer .foot .contain .brand img{
+    width:calc(100px + 2vw)
+}
+footer .foot .contain .brand p{
+    display: inline;
+
+    text-transform: capitalize;
+
+    font-weight: 600;
+    font-size:var(--fonti);
+    color: var(--color-9);
+}
+/* foot polices section */
+footer .foot .contain .polices {
+    display: flex;
+    flex-direction: row;
+    align-items: center ;
+    justify-content: space-around;
+
+    color: var(--color11);    
+
+    font-size: var(--fonti);
+    font-weight: 600;
+}
+
+
+footer .foot .contain .polices a, 
+footer .foot .contain .polices label,
+footer .foot .contain .polices img{
+    padding-left: 1vw;
+    padding-right: 1vw;
+    white-space: nowrap;
+}
+
+footer .foot .contain .polices a{
+    color: var(--color11);
+}
+
+footer .foot .contain .polices label{
+    margin-bottom: 0;
+}
+
+footer .foot .contain .polices img{
+    width: calc(10px + 5vw);
+}
+footer .foot .contain .polices select{
+    background-color: transparent;
+
+    color: var(--color-11);
+}
+
+/* foot social-media section */
+footer .foot .contain .social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+footer .foot .contain .social-media svg{
+    width:calc(10px + .5vw);
+    
+    margin-left: .5vw;
+    margin-right: .5vw;
+}
+footer .foot .contain .social-media .svg path{
+    fill: var(--color11);
 }
 
 
@@ -449,26 +560,49 @@ footer .stay-in-touch input{
     }
 
     /* INTRO */
+    #intro .hero{
+        padding-top: 10vw;
+        padding-bottom: 10vw;
+    }
+    
     #intro .hero .contain{
         grid-template-columns: repeat(1,1fr);
 
         text-align: center;
     }
+
+    #intro .hero .contain .showcase img.product{
+        width: 80vw;
+        min-width: 350px;
+    }
+    
     #intro .hero .contain .description{
         align-items: center;
     }
 
+    
+    #intro .hero .contain .description .title img.logo-name{
+        width:calc(200px + 28vw)
+    }
+    #intro .hero .contain .description .title img.logo-by{
+        width: calc(50px + 5vw);
+    }
+
     #intro .hero .contain .description .description h1{
         padding-top: 8vw;
+
+        font-size: calc(12px + 8vw);
     }
     
     #intro .hero .contain .description .description p{
         padding-top: 3vw;
+        font-size: calc(10px + 2vw);
     }
-    #intro .hero {
-        padding-top: 20vw;
-        padding-bottom: 20vw;
+
+    #intro .hero .contain .call-to-action .get-started{
+        padding: calc(10px + 1vw) calc(60px + 1vw);
     }
+
 
     /* SPECS SECTION */
     #specs .featured-specs {
@@ -498,6 +632,25 @@ footer .stay-in-touch input{
         grid-template-columns: repeat(3,1fr);
         gap: 0 2vw        
     }
+    /* foot section */
+    footer .foot .contain{
+        grid-template-columns: repeat(1,1fr);
+        row-gap: 2vw;
+    }
+    footer .foot .contain .brand,
+    footer .foot .contain .polices,
+    footer .foot .contain .social-media
+    {
+        justify-content: center;
+    }
+
+    footer .foot .contain .polices a, 
+    footer .foot .contain .polices label{
+        padding-left: 1vw;
+        padding-right: 1vw;
+    }
+    
+        
 
  }
  @media (max-width: 768px){
